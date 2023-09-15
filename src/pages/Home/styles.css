@@ -21,6 +21,18 @@
     margin-left: 100px;
     margin-top: 40px;
     color: #fff;
+    z-index: 100;
+}
+@media (max-width: 768px) {
+    .info {
+        width: 100%;
+        margin: 15px;
+    }
+    .info-box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }
 
 input {
@@ -33,6 +45,12 @@ input {
     color: #999999;
     padding: 10px 30px;
 }
+@media (max-width: 768px) {
+    input {
+        min-width: 80px;
+        padding: 10px 20px;
+    }
+}
 
 button {
     border: 1px solid #999999;
@@ -42,6 +60,12 @@ button {
     font-size: 18px;
     padding: 10px 20px;
     color: #999;
+}
+
+@media (max-width: 768px) {
+    button {
+        padding: 10px 20px;
+    }
 }
 
 .perfil {
@@ -55,6 +79,14 @@ button {
     border-radius: 60px;
     border: 2px solid #e5e5e5;
     margin-right: 32px;
+}
+
+@media (max-width: 768px) {
+    .profile-box {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
 }
 
 .perfil h3 {
@@ -77,6 +109,12 @@ button {
     color: #999999;
     font-size: 12px;
     margin: 20px 0 0 0;
+}
+
+@media (max-width: 768px) {
+    .perfil p {
+        margin: 10px 0 0 0;
+    }
 }
 
 .repositorio {

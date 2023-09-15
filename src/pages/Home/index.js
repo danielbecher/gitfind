@@ -19,6 +19,8 @@ function App() {
       const reposData = await fetch(`https://api.github.com/users/${user}/repos`);
       const newRepos = await reposData.json();
 
+      console.log(repos)
+
       if (newRepos.length) {
         setRepos(newRepos);
       }
@@ -31,7 +33,7 @@ function App() {
       <div className="conteudo">
         <img src={background} className="background" alt="Background App" />
         <div className="info">
-          <div>
+          <div className="info-box">
             <input name="usuario" placeholder="@username" value={user} onChange={event => setUser(event.target.value)}/>
             <button onClick={handleGetData}>Buscar</button>
           </div>
@@ -39,7 +41,7 @@ function App() {
             <>
               <div className="perfil">
               <img src={currentUser.avatar_url} className="profile" alt="Perfil" />
-              <div>
+              <div className="profile-box">
                 <h3>{currentUser.name}</h3>
                 <span>@{currentUser.login}</span>
                 <p>{currentUser.bio}</p>
@@ -53,7 +55,7 @@ function App() {
               <div>
                 <h4 className="repositorio">Repositórios</h4>
                 {repos.map(repo => (
-                  <ItemList title={repo.name} description={repo.description} />
+                  <ItemList title={repo.name} description={repo.description} url={repo.html_url} />
                 ))}
               </div>            
             </>
